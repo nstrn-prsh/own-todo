@@ -1,0 +1,18 @@
+.hot-air {
+     position: absolute;
+     left: 0;
+     right: 0;
+     margin: auto;
+     top: 40%;
+     animation: hot-air 5s ease-in-out 1s infinite;
+}
+
+@keyframes hot-air {
+     0% {
+     }
+     50% {
+          top: 30%;
+     }
+     100% {
+     }
+}

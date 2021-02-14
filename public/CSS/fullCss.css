@@ -1,0 +1,144 @@
+:root {
+     --main-border-radius: 12px;
+     --height: 730px;
+     --width: 411px;
+     --font: "Montserrat", sans-serif;
+     --black: #292929;
+     --red: #e56a77;
+     --red-pressed: #b23946;
+     --white: #ffffff;
+}
+
+@font-face {
+     font-family: "IRANSans", "IRANSans_Light", "IRANSans_UltraLight",
+          "IRANSansDN", "IRANSansDN_Light" !important;
+     src: url("./fonts/IRANSans.ttf"), url("./fonts/IRANSans_Light.ttf"),
+          url("./fonts/IRANSans_UltraLight.ttf"), url("./fonts/IRANSansDN.ttf"),
+          url("./fonts/IRANSansDN_Light.ttf");
+}
+
+body {
+     margin: 0;
+     padding: 0;
+     font-family: "IRANSans", "IRANSansDN" !important;
+     overflow-x: hidden;
+}
+
+h1,
+p,
+button {
+     font-family: "IRANSans_Light", "IRANSansDN_Light" !important;
+}
+
+h1 {
+     font-size: 22px;
+     font-weight: 700;
+     color: var(--black);
+     margin: 0;
+}
+
+p {
+     font-size: 16px;
+     font-weight: 300;
+     color: rgba(66, 66, 66, 0.39);
+     margin: 5px;
+}
+
+button {
+     border: none;
+     cursor: pointer;
+     font-size: 18px;
+     font-weight: 700;
+     color: var(--black);
+}
+
+button:focus {
+     outline: 0 !important;
+}
+
+button:-moz-focus-inner {
+     border: 0;
+}
+
+.add {
+     width: calc(var(--width) / 2.92);
+     height: 60px;
+     background: #e56a77;
+     border: 4px solid black;
+     border-radius: 100px;
+     position: relative;
+     margin: auto;
+}
+
+.none {
+     display: none;
+}
+
+.icon {
+     margin: 10px;
+     display: inline-block;
+     color: var(--black);
+}
+
+@keyframes cloud {
+     from {
+          left: -100px;
+          visibility: visible;
+     }
+     to {
+          left: 100vw;
+          visibility: hidden;
+     }
+}
+
+.appear {
+     left: 0px;
+}
+
+.appear {
+     animation-name: appear;
+     animation-duration: 0.5s;
+     animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes appear {
+     from {
+          opacity: 0;
+     }
+     to {
+          opacity: 1;
+     }
+}
+
+@keyframes disappear {
+     0% {
+          right: 0;
+          border-radius: var(--main-border-radius);
+          background-color: var(--black);
+          border: 0;
+     }
+     25% {
+          background-color: var(--red);
+          border-radius: var(--main-border-radius);
+          color: var(--red);
+          border: 0;
+     }
+     100% {
+          right: -150vw;
+          background-color: var(--red);
+          border-radius: var(--main-border-radius);
+          color: var(--red);
+          border: 0;
+     }
+}
+
+@media (max-width: 400px) {
+     :root {
+          --height: 100%;
+          --width: 100%;
+     }
+
+     .card {
+          z-index: 99;
+     }
+}

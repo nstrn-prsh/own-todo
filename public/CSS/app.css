@@ -1,0 +1,15 @@
+.App {
+     text-align: center;
+}
+
+.container {
+     position: absolute;
+     height: 100%;
+     width: 100%;
+     /* background-color: #002e4e; */
+     background-color: #76b9bf;
+     background-image: url('./images/giphy.gif') !important;
+     background-position: center;
+     background-repeat: round;
+     background-size: auto;
+}
