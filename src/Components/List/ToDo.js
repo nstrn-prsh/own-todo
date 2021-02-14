@@ -1,4 +1,4 @@
-import React, { Fragment, useReducer } from "react";
+import React, { Fragment, useReducer, useCallback } from "react";
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 import Search from "./Search";
@@ -7,6 +7,9 @@ const taskReducer = (state, action) => {
      switch (action.type) {
           case "ADD_TASK":
                return [...state, action.payload];
+          // meghdar haye ghablio bayad dashte bashe va meghdare jadid ro behesh ezafe kone
+          case "SEARCH":
+               return action.payload;
           default:
                throw new Error("Error");
      }
@@ -33,10 +36,21 @@ const ToDo = () => {
           );
      };
 
+     /* items: maghadiri ke search shodan
+     bar asase items, state ro update mikone
+     note: harbar ke ma ye chizi minevisim 
+     to input in tabe ye request mifreste 
+     va state hey update mishe 
+     dar natije ye loopi az request ha ijad mishe 
+     ke ma ba useCallback jelosho migirim */
+     const searchTaskHandler = useCallback((items) => {
+          dispatch({ type: "SEARCH", payload: items });
+     }, []);
+
      return (
           <Fragment>
                <section>
-                    <Search />
+                    <Search loadTasks={searchTaskHandler} />
                     <ToDoList tasks={tasks} />
                </section>
 
