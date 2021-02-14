@@ -14,7 +14,7 @@ const ToDoForm = ({ addTask }) => {
                     }}
                >
                     <div className='addControlsLeft'>
-                         <div className='col-3'>
+                         <div className='col3'>
                               <input
                                    type='text'
                                    className='effect-3 input shadow'

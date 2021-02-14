@@ -46,7 +46,7 @@ const Search = React.memo(({ loadTasks }) => {
      return (
           <section>
                <p className='tasksAlert'>Tasks</p>
-               <div className='col-3'>
+               <div className='col3'>
                     <input
                          type='text'
                          ref={inputData}

@@ -1,14 +1,28 @@
-.App {
-     text-align: center;
-}
-
-.container {
+.allTime {
      position: absolute;
      height: 100%;
      width: 100%;
-     /* background-color: #002e4e; */
+     text-align: "center";
+     transition: "0.2 all";
+     background-image: url("./images/giphy.gif") !important;
+     background-position: center;
+     background-repeat: round;
+     background-size: auto;
+}
+
+.dayTime {
      background-color: #76b9bf;
-     background-image: url('./images/giphy.gif') !important;
+     color: #E56A77;
+     background-image: url("./images/giphy.gif") !important;
+     background-position: center;
+     background-repeat: round;
+     background-size: auto;
+}
+
+.nightTime {
+     background-color: #002e4e; 
+     color: #EDC951;
+     background-image: url("./images/giphy.gif") !important;
      background-position: center;
      background-repeat: round;
      background-size: auto;
