@@ -1,18 +1,13 @@
-import React from "react";
-import useNightMode from "./NightMode";
+import React, { useContext } from "react";
+import { ThemeContext } from "./../ContextApi/ThemeContext";
 
 const ThemeLayout = (props) => {
-     const [mode, toggleMode] = useNightMode();
-
+     const { mode } = useContext(ThemeContext);
+     
      return (
-          <div className='allTime'>
-               <div className={mode === "day" ? "dayTime" : "nightTime"}>
+               <div className={mode === "day" ? "allTime dayTime" : "allTime nightTime"}>
                     {props.children}
                </div>
-               <button type='button' onClick={toggleMode}>
-                    تغییر تم
-               </button>
-          </div>
      );
 };
 

@@ -2,7 +2,8 @@
      --main-border-radius: 12px;
      --height: 730px;
      --width: 411px;
-     --font: "Montserrat", sans-serif;
+     --font: "SansitaSwashed-Black", "SansitaSwashed-Regular",
+          "SansitaSwashed-Medium", sans-serif;
      --black: #292929;
      --red: #e56a77;
      --red-pressed: #b23946;
@@ -10,24 +11,30 @@
 }
 
 @font-face {
-     font-family: "IRANSans", "IRANSans_Light", "IRANSans_UltraLight",
-          "IRANSansDN", "IRANSansDN_Light" !important;
-     src: url("./fonts/IRANSans.ttf"), url("./fonts/IRANSans_Light.ttf"),
-          url("./fonts/IRANSans_UltraLight.ttf"), url("./fonts/IRANSansDN.ttf"),
-          url("./fonts/IRANSansDN_Light.ttf");
+     font-family: "SansitaSwashed-Black", "SansitaSwashed-Regular",
+          "SansitaSwashed-Light", "SansitaSwashed-Medium", "SansitaSwashed-Bold",
+          "SansitaSwashed-SemiBold", "SansitaSwashed-ExtraBold" !important;
+     src: url("./fonts/SansitaSwashed-Black.ttf"),
+          url("./fonts/SansitaSwashed-Regular.ttf"),
+          url("./fonts/SansitaSwashed-Light.ttf"),
+          url("./fonts/SansitaSwashed-Medium.ttf"),
+          url("./fonts/SansitaSwashed-Bold.ttf"),
+          url("./fonts/SansitaSwashed-SemiBold.ttf")
+               url("./fonts/SansitaSwashed-ExtraBold.ttf");
 }
 
 body {
      margin: 0;
      padding: 0;
-     font-family: "IRANSans", "IRANSansDN" !important;
+     font-family: "SansitaSwashed-Black", "SansitaSwashed-Regular",
+          "SansitaSwashed-Medium" !important;
      overflow-x: hidden;
 }
 
 h1,
 p,
 button {
-     font-family: "IRANSans_Light", "IRANSansDN_Light" !important;
+     font-family: "SansitaSwashed-Light", "SansitaSwashed-Medium" !important;
 }
 
 h1 {

@@ -26,7 +26,14 @@ input[type="text"] {
 .effect-3 {
      border: 0;
      padding: 5px;
-     border-bottom: 1px solid #ccc;
+}
+
+.effect-3-Day {
+     border-bottom: 3px solid #e56a77;
+}
+
+.effect-3-Night {
+     border-bottom: 3px solid #edc951;
 }
 
 .effect-3 ~ .focus-border {
@@ -34,9 +41,10 @@ input[type="text"] {
      bottom: 0;
      left: 0;
      width: 100%;
-     height: 2px;
+     height: 3px;
      z-index: 99;
 }
+
 .effect-3 ~ .focus-border:before,
 .effect-3 ~ .focus-border:after {
      content: "";
@@ -45,13 +53,15 @@ input[type="text"] {
      left: 0;
      width: 0;
      height: 100%;
-     background-color: #e56a77;
+     background-color: rgb(0, 0, 0);
      transition: 0.4s;
 }
+
 .effect-3 ~ .focus-border:after {
      left: auto;
      right: 0;
 }
+
 .effect-3:focus ~ .focus-border:before,
 .effect-3:focus ~ .focus-border:after {
      width: 50%;
@@ -89,17 +99,28 @@ input[type="text"] {
      bottom: 30px;
      height: 60px;
      width: 60px;
-     background-color: var(--red);
      border-radius: 50%;
      text-align: center;
 }
 
-.plusButton:active {
-     background-color: var(--red-pressed);
+.plusButtonDay{
+     background-color: #e56a77;
+}
+
+.plusButtonNight{
+     background-color: #edc951;
+}
+
+.plusButtonDay:active {
+     background-color: #b23946;
+}
+
+.plusButtonNight:active {
+     background-color: #c7a821;
 }
 
 .plusButton span {
-     color: #ccc;
+     color: #000;
      font-size: xx-large;
      font-weight: bolder;
 }

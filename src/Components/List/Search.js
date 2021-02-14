@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import { ThemeContext } from "./../ContextApi/ThemeContext";
 
 const Search = React.memo(({ loadTasks }) => {
+     const { mode } = useContext(ThemeContext);
      const [searchTask, setSearchTask] = useState("");
 
      const inputData = useRef();
@@ -45,12 +47,24 @@ const Search = React.memo(({ loadTasks }) => {
 
      return (
           <section>
-               <p className='tasksAlert'>Tasks</p>
+               <p
+                    className={
+                         mode === "day"
+                              ? "tasksAlert tasksAlertDay"
+                              : "tasksAlert tasksAlertNight"
+                    }
+               >
+                    Tasks
+               </p>
                <div className='col3'>
                     <input
                          type='text'
                          ref={inputData}
-                         className='effect-3 input shadow'
+                         className={
+                              mode === "day"
+                                   ? "effect-3 input shadow effect-3-Day"
+                                   : "effect-3 input shadow effect-3-Night"
+                         }
                          placeholder='search here...'
                          value={searchTask}
                          onChange={(event) => setSearchTask(event.target.value)}

@@ -11,7 +11,15 @@
       padding-top: 20px ;
       font-size: 22px;
       font-weight: 900;
-      color: #e56a77;
+      text-shadow: 2px 2px 2px #b1b0b0fa;
+}
+
+.tasksAlertDay{
+     color: #e56a77;
+}
+
+.tasksAlertNight{
+     color: #edc951;
 }
 
 .task {

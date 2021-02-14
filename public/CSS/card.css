@@ -21,13 +21,13 @@
     
    /* Handle */
    ::-webkit-scrollbar-thumb {
-     background: #e56a77; 
+     background: #6c6c6c; 
      border-radius: 90px;
    }
    
    /* Handle on hover */
    ::-webkit-scrollbar-thumb:hover {
-     background: #e56a77; 
+     background: #8b8b8b; 
    }
 
 .shadow {
@@ -35,8 +35,8 @@
 }
 
 .gradient {
-     /* background: linear-gradient(209.22deg, #cacacad2 4.25%, #ffffffd5 95.6%); */
-     background: linear-gradient(209.22deg, #cacaca 4.25%, #ffffff 95.6%);
+     background: linear-gradient(209.22deg, #b1b0b0fa 4.25%, #fffffff3 95.6%);
+     /* background: linear-gradient(209.22deg, #cacaca 4.25%, #ffffff 95.6%); */
 }
 
 .start {

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "./../ContextApi/ThemeContext";
 
 const ToDoForm = ({ addTask }) => {
+     const { mode } = useContext(ThemeContext);
      const [task, setTask] = useState("");
 
      return (
@@ -17,7 +19,11 @@ const ToDoForm = ({ addTask }) => {
                          <div className='col3'>
                               <input
                                    type='text'
-                                   className='effect-3 input shadow'
+                                   className={
+                                        mode === "day"
+                                             ? "effect-3 input shadow effect-3-Day"
+                                             : "effect-3 input shadow effect-3-Night"
+                                   }
                                    placeholder='Type your task...'
                                    value={task}
                                    onChange={(event) =>
@@ -28,7 +34,14 @@ const ToDoForm = ({ addTask }) => {
                          </div>
                     </div>
                     <div>
-                         <button type='submit' className='plusButton shadow'>
+                         <button
+                              type='submit'
+                              className={
+                                   mode === "day"
+                                        ? "plusButton plusButtonDay shadow"
+                                        : "plusButton plusButtonNight shadow"
+                              }
+                         >
                               <span>+</span>
                          </button>
                     </div>
