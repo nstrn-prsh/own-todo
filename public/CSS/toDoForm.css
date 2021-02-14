@@ -61,8 +61,8 @@ input[type="text"] {
 .addControls {
      width: 100%;
      height: 100px;
-     position: absolute;
-     bottom: 20px;
+     position: sticky;
+     top: 20px;
 }
 
 .addControlsLeft {
