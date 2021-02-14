@@ -1,12 +1,24 @@
 .todo {
-     padding-top: 40px;
-     position: relative;
+     padding: 0px;
+     padding-top: 30px;
+     text-align: center;
+     margin: 0px;
+     /* position: relative; */
+}
+
+.tasksAlert{
+     text-align: "center";
+      padding-top: 20px ;
+      font-size: 22px;
+      font-weight: 900;
+      color: #e56a77;
 }
 
 .task {
      position: relative;
+     width: 85%;
      border-bottom: 1px solid rgb(234, 234, 234);
-     margin: 5px 40px 5px 40px;
+     margin: 5px auto;
      height: 100%;
      color: var(--black);
      min-height: 50px;
@@ -16,7 +28,7 @@
      font-family: var(--font);
      font-size: 22px;
      font-weight: 300;
-     color: rgba(66, 66, 66, 0.39);
+     color: #002e4e;
      display: block;
 }
 
@@ -29,9 +41,8 @@
 .task:hover {
      border: 0px solid var(--black);
      box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.15);
-     margin: 5px 20px 5px 20px;
      border-radius: var(--main-border-radius);
-     background-color: var(--black);
+     background-color: #e56a77;
      font-size: 22px;
      font-weight: 700;
 }
@@ -57,61 +68,17 @@
 
 .left {
      float: left;
-     margin: 20px 0 0 0px;
+     margin: 20px 20px;
+     list-style: none;
 }
 
 .right {
      float: right;
-     margin: 24px 0 0 0;
-     color: #b4b4b4;
+     margin: 24px 24px;
+     color: #002e4e;
      /*     display: none; */
 }
 
 .right:visited {
      display: none;
-}
-
-.form {
-     position: absolute;
-     margin: 20px;
-     left: -2000px;
-     bottom: 41px;
-     color: var(--black);
-     transition: left 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-     border-radius: var(--main-border-radius);
-}
-
-.input {
-     height: 50px;
-     width: 50%;
-     margin: 10px;
-     padding: 5px 0 5px 20px;
-     font-size: 20px;
-     font-weight: 300;
-     border: 0px solid var(--black);
-     border-radius: var(--main-border-radius);
-}
-
-.plusButton {
-     position: absolute;
-     right: 30px;
-     bottom: 65px;
-     height: 70px;
-     width: 70px;
-     background-color: var(--red);
-     border-radius: 50%;
-}
-
-.plusButton:active {
-     background-color: var(--red-pressed);
-}
-
-.plusIcon {
-     position: absolute;
-     width: 20px;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     top: 0;
-     margin: auto;
 }
