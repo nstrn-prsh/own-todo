@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import BtnTheme from "./../UI/BtnTheme";
-import { ThemeContext } from "./../ContextApi/ThemeContext";
+import { ThemeContext } from './../../Container/ContextApi/ThemeContext';
+import BtnTheme from './../UI/BtnTheme';
 
 const NavBar = () => {
      const { mode } = useContext(ThemeContext);

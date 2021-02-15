@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "./Common/Card";
-import NavBar from "./Common/NavBar";
+import NavBar from './../Components/Common/NavBar';
+import Card from './../Components/Common/Card';
 
 class App extends React.Component {
      render() {

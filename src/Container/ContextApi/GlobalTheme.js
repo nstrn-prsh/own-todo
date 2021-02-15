@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeContext } from "./ThemeContext";
-import useNightMode from "./../UI/NightMode";
+import useNightMode from './../../Components/UI/NightMode';
 
 const GlobalTheme = (props) => {
      const [mode, toggleMode] = useNightMode();

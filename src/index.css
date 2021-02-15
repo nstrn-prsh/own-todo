@@ -1,5 +1,10 @@
+* {
+     box-sizing: border-box;
+}
+
 body {
      margin: 0;
+     /* direction: rtl; */
      font-family: "SansitaSwashed-Black", "SansitaSwashed-Regular",
      "SansitaSwashed-Medium" !important;
      -webkit-font-smoothing: antialiased;

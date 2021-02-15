@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
-import { ThemeContext } from "./../ContextApi/ThemeContext";
+import { ThemeContext } from "./../../Container/ContextApi/ThemeContext";
 
 const BtnTheme = () => {
      const { mode, toggleMode } = useContext(ThemeContext);

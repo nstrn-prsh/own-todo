@@ -19,6 +19,7 @@ const ToDo = () => {
      const [tasks, dispatch] = useReducer(taskReducer, []);
 
      const addTaskHandler = (items) => {
+          //note:  url + tasks.json
           fetch(
                "https://complete-todo-default-rtdb.firebaseio.com/tasks.json",
                {

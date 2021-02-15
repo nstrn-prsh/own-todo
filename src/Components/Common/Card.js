@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ToDo from './../List/ToDo';
 // import HotAir from './../UI/HotAir';
-// import Button from './Button';
 
 class Card extends Component {
      constructor(props) {
@@ -27,14 +26,14 @@ class Card extends Component {
                                    <h1>Your day’s still empty...</h1>
                                    <p>Put in some tasks and make your day!</p>
                               </div>
-                              <Button
+                              <button
                                    className='add shadow'
                                    onClick={() => {
                                         this.switchToTasks();
                                    }}
                               >
                                    Add
-                              </Button>
+                              </button>
                          </div>
                     </div> */}
                     {/* <div className={!data ? "appear" : "none"}> */}
