@@ -5,12 +5,11 @@
 body {
      margin: 0;
      /* direction: rtl; */
-     font-family: "SansitaSwashed-Black", "SansitaSwashed-Regular",
-     "SansitaSwashed-Medium" !important;
+     font-family:  "Comic Sans MS", sans-serif !important;
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-     font-family: "SansitaSwashed-Light","SansitaSwashed-SemiBold";
+     font-family: "Comic Sans MS", sans-serif;
 }

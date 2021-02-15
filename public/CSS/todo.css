@@ -50,7 +50,7 @@
      /* border: 0px solid var(--black); */
      box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.15);
      border-radius: 30px;
-     background-color: #e56a77;
+     background-color: rgba(0, 0, 0, 0.233);
      font-size: 22px;
      font-weight: 700;
 }

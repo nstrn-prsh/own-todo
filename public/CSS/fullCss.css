@@ -2,8 +2,7 @@
      --main-border-radius: 12px;
      --height: 730px;
      --width: 411px;
-     --font: "SansitaSwashed-Black", "SansitaSwashed-Regular",
-          "SansitaSwashed-Medium", sans-serif;
+     --font: "Comic Sans MS", sans-serif;
      --black: #292929;
      --red: #e56a77;
      --red-pressed: #b23946;
@@ -26,15 +25,14 @@
 body {
      margin: 0;
      padding: 0;
-     font-family: "SansitaSwashed-Black", "SansitaSwashed-Regular",
-          "SansitaSwashed-Medium" !important;
+     font-family: var(--font) !important;
      overflow-x: hidden;
 }
 
 h1,
 p,
 button {
-     font-family: "SansitaSwashed-Light", "SansitaSwashed-Medium" !important;
+     font-family: var(--font);
 }
 
 h1 {
@@ -70,7 +68,6 @@ button:-moz-focus-inner {
 .add {
      width: calc(var(--width) / 2.92);
      height: 60px;
-     background: #e56a77;
      border: 4px solid black;
      border-radius: 100px;
      position: relative;

@@ -1,6 +1,7 @@
 .input {
      font-size: 20px;
      font-weight: 300;
+     font-family: var(--font);
 }
 
 :focus {
@@ -15,7 +16,7 @@
 } /* necessary to give position: relative to parent. */
 
 input[type="text"] {
-     font: 15px/24px "IRANSans_UltraLight", sans-serif;
+     font: 15px/24px "Comic Sans MS", sans-serif;
      color: #333;
      width: 100%;
      box-sizing: border-box;
@@ -79,8 +80,7 @@ input[type="text"] {
      position: relative;
      width: 60%;
      float: left;
-     margin-top: 30px;
-     margin-left: 30px;
+     margin: 30px;
 }
 
 .form {
@@ -103,11 +103,11 @@ input[type="text"] {
      text-align: center;
 }
 
-.plusButtonDay{
+.plusButtonDay {
      background-color: #e56a77;
 }
 
-.plusButtonNight{
+.plusButtonNight {
      background-color: #edc951;
 }
 

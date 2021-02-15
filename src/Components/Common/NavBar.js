@@ -10,7 +10,7 @@ const NavBar = () => {
           mode === "day" ? { color: "#002e4e" } : { color: "#76b9bf" };
 
      return (
-          <Navbar >
+          <Navbar  style={{margin: '0px 30px'}}>
                <Navbar.Brand href='#home' style={colour}>HOME</Navbar.Brand>
                <Nav className='mr-auto'>
                     <Nav.Link href='#home' style={colour}>WEATHER</Nav.Link>
