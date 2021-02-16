@@ -1,5 +1,7 @@
 import React from "react";
-import NavBar from './../Components/Common/NavBar';
+import NavBar from "./../Components/Common/NavBar";
+import { Route, Switch } from "react-router-dom";
+import Weather from "./../Components/Forecast/Weather";
 import Card from './../Components/Common/Card';
 
 class App extends React.Component {
@@ -7,7 +9,10 @@ class App extends React.Component {
           return (
                <div style={{ textAlign: "center" }}>
                     <NavBar />
-                    <Card />
+                    <Switch>
+                         <Route path='/' exact component={Card} />
+                         <Route path='/weather' exact component={Weather} />
+                    </Switch>
                </div>
           );
      }

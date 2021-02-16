@@ -9,24 +9,12 @@
      --white: #ffffff;
 }
 
-@font-face {
-     font-family: "SansitaSwashed-Black", "SansitaSwashed-Regular",
-          "SansitaSwashed-Light", "SansitaSwashed-Medium", "SansitaSwashed-Bold",
-          "SansitaSwashed-SemiBold", "SansitaSwashed-ExtraBold" !important;
-     src: url("./fonts/SansitaSwashed-Black.ttf"),
-          url("./fonts/SansitaSwashed-Regular.ttf"),
-          url("./fonts/SansitaSwashed-Light.ttf"),
-          url("./fonts/SansitaSwashed-Medium.ttf"),
-          url("./fonts/SansitaSwashed-Bold.ttf"),
-          url("./fonts/SansitaSwashed-SemiBold.ttf")
-               url("./fonts/SansitaSwashed-ExtraBold.ttf");
-}
-
 body {
      margin: 0;
      padding: 0;
      font-family: var(--font) !important;
      overflow-x: hidden;
+     box-sizing: border-box;
 }
 
 h1,
@@ -65,75 +53,33 @@ button:-moz-focus-inner {
      border: 0;
 }
 
-.add {
-     width: calc(var(--width) / 2.92);
-     height: 60px;
-     border: 4px solid black;
-     border-radius: 100px;
-     position: relative;
-     margin: auto;
+.allTime {
+     position: absolute;
+     height: 100%;
+     width: 100%;
+     text-align: "center";
+     transition: "0.2 all";
+     background-image: url("./images/giphy.gif") !important;
+     background-position: center;
+     background-repeat: round;
+     background-size: auto;
+     font-family: var(--font);
 }
 
-.none {
-     display: none;
+.dayTime {
+     background-color: #76b9bf;
+     color: #e56a77;
+}
+
+.nightTime {
+     background-color: #002e4e;
+     color: #edc951;
 }
 
 .icon {
      margin: 10px;
      display: inline-block;
      color: var(--black);
-}
-
-@keyframes cloud {
-     from {
-          left: -100px;
-          visibility: visible;
-     }
-     to {
-          left: 100vw;
-          visibility: hidden;
-     }
-}
-
-.appear {
-     left: 0px;
-}
-
-.appear {
-     animation-name: appear;
-     animation-duration: 0.5s;
-     animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-@keyframes appear {
-     from {
-          opacity: 0;
-     }
-     to {
-          opacity: 1;
-     }
-}
-
-@keyframes disappear {
-     0% {
-          right: 0;
-          border-radius: var(--main-border-radius);
-          background-color: var(--black);
-          border: 0;
-     }
-     25% {
-          background-color: var(--red);
-          border-radius: var(--main-border-radius);
-          color: var(--red);
-          border: 0;
-     }
-     100% {
-          right: -150vw;
-          background-color: var(--red);
-          border-radius: var(--main-border-radius);
-          color: var(--red);
-          border: 0;
-     }
 }
 
 @media (max-width: 400px) {
