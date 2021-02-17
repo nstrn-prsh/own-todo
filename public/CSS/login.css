@@ -1,0 +1,49 @@
+.loginCard {
+     /* background-image: url("./images/Background/blueCard\ \(1\).jpg");
+     background-position: bottom;
+     background-repeat: no-repeat;
+     background-size: cover;
+     box-shadow: 6px 5px #1a2c3d42; */
+     background-color: #bcabbd67;
+     border: 30px solid #dcbdcd11;
+     position: relative;
+     margin: 80px auto;
+     height: 600px;
+     width: 35%;
+     border-radius: 30px;
+     top: 10%;
+     z-index: 1;
+     font-family: var(--font);
+     text-align: center;
+     overflow: hidden;
+}
+
+.loginContainer label {
+     margin-top: 40px;
+     font-family: var(--font);
+     font-size: 24px;
+     font-weight: lighter;
+     color: #480055;
+}
+
+.errorMsg {
+     color: #ff0059;
+     font-size: 14px;
+     margin-top: 3px;
+}
+
+.btnContainer button {
+     margin: 80px auto;
+     border: none;
+     background-color: #b59cb6;
+     color: #480055;
+}
+
+.btnContainer p {
+     color: #551461 !important;
+}
+.btnContainer p span {
+     cursor: pointer;
+     color: #ff0059;
+     margin-left: 30px;
+}

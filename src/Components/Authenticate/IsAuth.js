@@ -12,8 +12,8 @@ const IsAuth = () => {
                <HotAir />
                <div className='start'>
                     <div className='text'>
-                         <h1>Your day’s still empty...</h1>
-                         <p>Put in some tasks and make your day!</p>
+                         <h1>add, edit and sort your tasks here!</h1>
+                         <p>click on enter to continue...</p>
                     </div>
                     <button
                          className={
@@ -23,7 +23,7 @@ const IsAuth = () => {
                          }
                          onClick={loginHandler}
                     >
-                         Add
+                         Enter
                     </button>
                </div>
           </Fragment>

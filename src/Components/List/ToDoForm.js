@@ -1,10 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import { ThemeContext } from "./../../Container/ContextApi/ThemeContext";
 import Input from "./../Common/Input";
 
 const ToDoForm = ({ addTask }) => {
      const { mode } = useContext(ThemeContext);
      const [task, setTask] = useState("");
+
+     const inputFocus = useRef(null);
+     useEffect(() => {
+          if (inputFocus.current) inputFocus.current.focus();
+     }, [inputFocus.current]);
+
+     const clearInputs = () => {
+          setTask("");
+     };
 
      return (
           <div className='addControls'>
@@ -14,23 +23,20 @@ const ToDoForm = ({ addTask }) => {
                          addTask({
                               task: task,
                          });
+                         clearInputs();
                     }}
                >
                     <div className='addControlsLeft'>
-                         <div className='col3'>
-                              <Input
-                                   config={{
-                                        type: "text",
-                                        placeholder: "add your task...",
-                                        id: "task",
-                                   }}
-                                   value={task}
-                                   onChange={(event) =>
-                                        setTask(event.target.value)
-                                   }
-                              />
-                              <span className='focus-border'></span>
-                         </div>
+                         <Input
+                              config={{
+                                   type: "text",
+                                   placeholder: "add your task...",
+                                   id: "task",
+                                   ref: inputFocus,
+                              }}
+                              value={task}
+                              onChange={(event) => setTask(event.target.value)}
+                         />
                     </div>
                     <div>
                          <button
@@ -41,7 +47,7 @@ const ToDoForm = ({ addTask }) => {
                                         : "plusButton plusButtonNight shadow"
                               }
                          >
-                              <span>+</span>
+                              <span style={{ fontWeight: 900}}>+</span>
                          </button>
                     </div>
                </form>

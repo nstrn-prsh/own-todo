@@ -1,19 +1,29 @@
 import React, { useContext } from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
 import { ThemeContext } from "./../../Container/ContextApi/ThemeContext";
 import { NavLink, withRouter } from "react-router-dom";
 import BtnTheme from "./../UI/BtnTheme";
+import fire from "./../../Services/fire";
 
 const NavBar = () => {
      const { mode } = useContext(ThemeContext);
 
+     //  log out
+     const logoutHandler = () => {
+          fire.auth().signOut();
+     };
+
      const colour =
-          mode === "day" ? { color: "#002e4e" } : { color: "#76b9bf" };
+          mode === "day"
+               ? { color: "#002e4e", marginRight: "15px" }
+               : { color: "#76b9bf", marginRight: "15px" };
      const activeColour =
-          mode === "day" ? { color: "#e56a77" } : { color: "#edc951" };
+          mode === "day"
+               ? { color: "#e56a77", marginRight: "15px" }
+               : { color: "#edc951", marginRight: "15px" };
 
      return (
-          <Navbar style={{ margin: "0px 30px" }}>
+          <Navbar style={{ margin: "0px 35px " }}>
                <Nav className='mr-auto'>
                     <Nav.Link>
                          <NavLink
@@ -43,6 +53,9 @@ const NavBar = () => {
                               ABOUT ME
                          </NavLink>
                     </Nav.Link>
+                    <Button variant='outline-secondary' onClick={logoutHandler}>
+                         Log out
+                    </Button>
                </Nav>
                <BtnTheme />
           </Navbar>

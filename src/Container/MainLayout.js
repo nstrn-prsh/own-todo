@@ -1,31 +1,22 @@
-import React, { Component, Fragment } from "react";
-import GlobalTheme from "./ContextApi/GlobalTheme";
-import ThemeLayout from "./../Components/UI/ThemeLayout";
-import GlobalAuth from "./ContextApi/GlobalAuth";
-import App from "./App";
-import { BrowserRouter as Router } from "react-router-dom";
+import React from "react";
+import NavBar from "./../Components/Common/NavBar";
+import { Route, Switch } from "react-router-dom";
+import Weather from "./../Components/Forecast/Weather";
+import Card from "./../Components/Common/Card";
+import MainContext from "./ContextApi/MainContext";
 
-class MainLayout extends Component {
-     render() {
-          return (
-               <Fragment>
-                    {/* react router */}
-                    <Router>
-                         {/* context api for theme  */}
-                         <GlobalTheme>
-                              {/* login info */}
-                              <GlobalAuth>
-                                   {/* day/night theme */}
-                                   <ThemeLayout>
-                                        {/* main component */}
-                                        <App />
-                                   </ThemeLayout>
-                              </GlobalAuth>
-                         </GlobalTheme>
-                    </Router>
-               </Fragment>
-          );
-     }
-}
+const MainLayout = () => {
+     return (
+          <MainContext>
+               <div style={{ textAlign: "center" }}>
+                    <NavBar />
+                    <Switch>
+                         <Route path='/' exact component={Card} />
+                         <Route path='/weather' exact component={Weather} />
+                    </Switch>
+               </div>
+          </MainContext>
+     );
+};
 
 export default MainLayout;

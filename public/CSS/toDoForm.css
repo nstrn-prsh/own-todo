@@ -47,6 +47,14 @@ input[type="text"] {
      letter-spacing: 1px;
      background: transparent;
 }
+input[type="password"] {
+     font: 15px/24px "Comic Sans MS", sans-serif;
+     color: #333;
+     width: 100%;
+     box-sizing: border-box;
+     letter-spacing: 1px;
+     background: transparent;
+}
 
 .effect-3 {
      border: 0;

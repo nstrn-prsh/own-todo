@@ -17,7 +17,7 @@ const Weather = () => {
                     `${weatherApi.base}/weather?q=${query}&units=metric&appid=${weatherApi.key}`
                ).then((res) =>
                     res.json().then((resData) => {
-                         // xxx:
+                         // note:
                          setQuery("");
                          setWeather(resData);
                          console.log(resData);

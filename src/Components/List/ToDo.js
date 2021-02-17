@@ -11,7 +11,7 @@ const taskReducer = (state, action) => {
           case "SEARCH":
                return action.payload;
           default:
-               throw new Error("Error");
+               throw new Error("Error useReducer");
      }
 };
 

@@ -12,9 +12,15 @@
 body {
      margin: 0;
      padding: 0;
+     width: 100%;
      font-family: var(--font) !important;
      overflow-x: hidden;
      box-sizing: border-box;
+     /* background-color: #d4e9fe; */
+     background-image: url("./images/pinkBackground (1).jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
 }
 
 h1,
@@ -67,12 +73,12 @@ button:-moz-focus-inner {
 }
 
 .dayTime {
-     background-color: #76b9bf;
+     background-color: #76b9bf !important;
      color: #e56a77;
 }
 
 .nightTime {
-     background-color: #002e4e;
+     background-color: #002e4e !important;
      color: #edc951;
 }
 

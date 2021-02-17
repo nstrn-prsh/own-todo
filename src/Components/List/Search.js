@@ -45,7 +45,7 @@ const Search = React.memo(({ loadTasks }) => {
           va alan mikhad bar asase dependecy ha ejra beshe*/
           return () => clearTimeout(timer);
      }, [searchTask, inputData, loadTasks]);
-
+     
      return (
           <section>
                <p
@@ -57,18 +57,16 @@ const Search = React.memo(({ loadTasks }) => {
                >
                     Tasks
                </p>
-               <div className='col3'>
                     <Input
                               config={{
                                    type: "text",
                                    placeholder: "search your task...",
-                                   ref: inputData
+                                   ref: inputData,
                               }}
                          value={searchTask}
                          onChange={(event) => setSearchTask(event.target.value)}
                     />
-                    <span className='focus-border'></span>
-               </div>
+                    <p>sort</p>
           </section>
      );
 });
