@@ -44,15 +44,6 @@ const NavBar = () => {
                               WEATHER
                          </NavLink>
                     </Nav.Link>
-                    <Nav.Link>
-                         <NavLink
-                              to='/aboutMe'
-                              style={colour}
-                              activeStyle={activeColour}
-                         >
-                              ABOUT ME
-                         </NavLink>
-                    </Nav.Link>
                     <Button variant='outline-secondary' onClick={logoutHandler}>
                          Log out
                     </Button>

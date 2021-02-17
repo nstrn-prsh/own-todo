@@ -12,7 +12,7 @@ const IsAuth = () => {
                <HotAir />
                <div className='start'>
                     <div className='text'>
-                         <h1>add, edit and sort your tasks here!</h1>
+                         <h1>add your tasks here!</h1>
                          <p>click on enter to continue...</p>
                     </div>
                     <button

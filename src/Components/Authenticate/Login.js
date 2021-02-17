@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Input from "./../Common/Input";
 
 const Login = (props) => {
@@ -15,6 +15,11 @@ const Login = (props) => {
           signUpHandler,
      } = props;
 
+     const activeInput = useRef(null);
+     useEffect(() => {
+          if (activeInput.current) activeInput.current.focus();
+     }, [ hasAccount]);
+
      return (
           <section className='loginCard'>
                <div className='loginContainer'>
@@ -24,6 +29,7 @@ const Login = (props) => {
                               type: "text",
                               placeholder: "Ex: task@gamil.com",
                               required: "required",
+                              ref: activeInput,
                          }}
                          value={email}
                          onChange={(event) => setEmail(event.target.value)}

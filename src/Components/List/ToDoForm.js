@@ -1,4 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
+import { toastError,toastSuccess } from "../UI/toastMsg";
 import { ThemeContext } from "./../../Container/ContextApi/ThemeContext";
 import Input from "./../Common/Input";
 
@@ -9,23 +10,23 @@ const ToDoForm = ({ addTask }) => {
      const inputFocus = useRef(null);
      useEffect(() => {
           if (inputFocus.current) inputFocus.current.focus();
-     }, [inputFocus.current]);
+     }, [inputFocus.current, task]);
 
-     const clearInputs = () => {
+     const addTaskHandler = (event) => {
+          event.preventDefault();
+          let re = /\S/g;
+          if (re.exec(task) !== null) {
+               addTask({
+                    task: task,
+               });
+               toastSuccess('Task added to your list!')
+          } else toastError('Write your task in input!');
           setTask("");
      };
 
      return (
           <div className='addControls'>
-               <form
-                    onSubmit={(event) => {
-                         event.preventDefault();
-                         addTask({
-                              task: task,
-                         });
-                         clearInputs();
-                    }}
-               >
+               <form onSubmit={(event) => addTaskHandler(event)}>
                     <div className='addControlsLeft'>
                          <Input
                               config={{
@@ -47,7 +48,7 @@ const ToDoForm = ({ addTask }) => {
                                         : "plusButton plusButtonNight shadow"
                               }
                          >
-                              <span style={{ fontWeight: 900}}>+</span>
+                              <span style={{ fontWeight: 900 }}>+</span>
                          </button>
                     </div>
                </form>

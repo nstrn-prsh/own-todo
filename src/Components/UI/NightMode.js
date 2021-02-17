@@ -15,8 +15,9 @@ const useNightMode = () => {
           }
      };
 
-     /*  check shodane theme ba ejraye barname
-        ke ba harbar refresh taghiir nakone*/
+     /*  check shodane theme ba render shodane barname
+        ke ba harbar refresh taghiir nakone
+        yani ba render shodane barname check mikonim mode ro*/
      useEffect(() => {
           const currentMode = window.localStorage.getItem("mode");
           if (currentMode) setMode(currentMode);

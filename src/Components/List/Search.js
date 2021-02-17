@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { ThemeContext } from "./../../Container/ContextApi/ThemeContext";
-import Input from './../Common/Input';
+import Input from "./../Common/Input";
+import api from "./../../Services/api.json";
 
 const Search = React.memo(({ loadTasks }) => {
      const { mode } = useContext(ThemeContext);
@@ -22,10 +23,7 @@ const Search = React.memo(({ loadTasks }) => {
                          searchTask.length === 0
                               ? ""
                               : `?orderBy="task"&equalTo="${searchTask}"`;
-                    fetch(
-                         "https://complete-todo-default-rtdb.firebaseio.com/tasks.json" +
-                              query
-                    )
+                    fetch(`${api.firebase}/tasks.json` + query)
                          .then((res) => res.json())
                          .then((resData) => {
                               const tasksList = [];
@@ -40,12 +38,12 @@ const Search = React.memo(({ loadTasks }) => {
                          });
                }
           }, 500);
-            /*note: //optimize: 
+          /*note: //optimize: 
           tabe cleanup vaghti ejra mishe ke useEffect yebar ejra shode
           va alan mikhad bar asase dependecy ha ejra beshe*/
           return () => clearTimeout(timer);
      }, [searchTask, inputData, loadTasks]);
-     
+
      return (
           <section>
                <p
@@ -57,16 +55,15 @@ const Search = React.memo(({ loadTasks }) => {
                >
                     Tasks
                </p>
-                    <Input
-                              config={{
-                                   type: "text",
-                                   placeholder: "search your task...",
-                                   ref: inputData,
-                              }}
-                         value={searchTask}
-                         onChange={(event) => setSearchTask(event.target.value)}
-                    />
-                    <p>sort</p>
+               <Input
+                    config={{
+                         type: "text",
+                         placeholder: "search your task...",
+                         ref: inputData,
+                    }}
+                    value={searchTask}
+                    onChange={(event) => setSearchTask(event.target.value)}
+               />
           </section>
      );
 });

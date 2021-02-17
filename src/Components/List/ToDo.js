@@ -1,4 +1,5 @@
 import React, { Fragment, useReducer, useCallback } from "react";
+import api from "./../../Services/api.json";
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 import Search from "./Search";
@@ -20,14 +21,11 @@ const ToDo = () => {
 
      const addTaskHandler = (items) => {
           //note:  url + tasks.json
-          fetch(
-               "https://complete-todo-default-rtdb.firebaseio.com/tasks.json",
-               {
-                    method: "POST",
-                    body: JSON.stringify(items),
-                    headers: { "content-type": "application/json" },
-               }
-          ).then((res) =>
+          fetch(`${api.firebase}/tasks.json`, {
+               method: "POST",
+               body: JSON.stringify(items),
+               headers: { "content-type": "application/json" },
+          }).then((res) =>
                res.json().then((resData) =>
                     dispatch({
                          type: "ADD_TASK",
