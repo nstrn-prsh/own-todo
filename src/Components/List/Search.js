@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { ThemeContext } from "./../../Container/ContextApi/ThemeContext";
+import { Badge } from "react-bootstrap";
 import Input from "./../Common/Input";
 import api from "./../../Services/api.json";
 
-const Search = React.memo(({ loadTasks }) => {
+const Search = React.memo(({ loadTasks, tasks }) => {
      const { mode } = useContext(ThemeContext);
      const [searchTask, setSearchTask] = useState("");
      const inputData = useRef();
@@ -53,6 +54,10 @@ const Search = React.memo(({ loadTasks }) => {
                               : "tasksAlert tasksAlertNight"
                     }
                >
+                    <Badge style={{ fontWeight: "bolder", fontSize: 22 }}>
+                         {" "}
+                         {tasks.length}
+                    </Badge>
                     Tasks
                </p>
                <Input

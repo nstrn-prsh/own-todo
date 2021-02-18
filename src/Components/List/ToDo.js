@@ -44,12 +44,12 @@ const ToDo = () => {
      ke ma ba useCallback jelosho migirim */
      const searchTaskHandler = useCallback((items) => {
           dispatch({ type: "SEARCH", payload: items });
-     }, []);
+     }, []); 
 
      return (
           <Fragment>
                <section>
-                    <Search loadTasks={searchTaskHandler} />
+                    <Search loadTasks={searchTaskHandler}  tasks={tasks}  />
                     <ToDoList tasks={tasks} />
                </section>
 

@@ -10,7 +10,7 @@ const ToDoList = ({ tasks }) => {
                                    <li className='left'>{item.task}</li>
                               </div>
                               <button className='right'> x </button>
-                              <button className='right'> edit </button>
+                              {/* <button className='right'> edit </button> */}
                          </div>
                     ))}
                </ul>
