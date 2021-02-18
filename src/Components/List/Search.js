@@ -3,8 +3,6 @@ import { ThemeContext } from "./../../Container/ContextApi/ThemeContext";
 import { Badge } from "react-bootstrap";
 import Input from "./../Common/Input";
 import api from "./../../Services/api.json";
-import ToDoList from './ToDoList';
-import fire from './../../Services/fire';
 
 const Search = React.memo(({ loadTasks, tasks }) => {
      const { mode } = useContext(ThemeContext);

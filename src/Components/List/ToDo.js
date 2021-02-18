@@ -6,20 +6,7 @@ import Search from "./Search";
 import axios from "axios";
 import { toastWarning } from "./../UI/toastMsg";
 
-// const taskReducer = (state, action) => {
-//      switch (action.type) {
-//           case "ADD_TASK":
-//                return [...state, action.payload];
-//           // meghdar haye ghablio bayad dashte bashe va meghdare jadid ro behesh ezafe kone
-//           case "SEARCH":
-//                return action.payload;
-//           default:
-//                throw new Error("Error useReducer");
-//      }
-// };
-
 const ToDo = () => {
-     // const [tasks, dispatch] = useReducer(taskReducer, []);
      const [tasks, setTasks] = useState([]);
 
      const addTaskHandler = (items) => {
@@ -29,25 +16,17 @@ const ToDo = () => {
                body: JSON.stringify(items),
                headers: { "content-type": "application/json" },
           }).then((res) =>
-               res.json().then(
-                    (resData) => {
-                         setTasks((prevState) => [
-                              ...prevState,
-                              {
-                                   id: resData.name,
-                                   ...items,
-                              },
-                         ]);
-                    }
-                    // dispatch({
-                    //      type: "ADD_TASK",
-                    //      payload: { id: resData.name, ...items },
-                    // })
-               )
+               res.json().then((resData) => {
+                    setTasks((prevState) => [
+                         ...prevState,
+                         {
+                              id: resData.name,
+                              ...items,
+                         },
+                    ]);
+               })
           );
      };
-     console.log(tasks);
-     // console.log(tasks[0]);
 
      /* items: maghadiri ke search shodan
      bar asase items, state ro update mikone
@@ -57,16 +36,15 @@ const ToDo = () => {
      dar natije ye loopi az request ha ijad mishe 
      ke ma ba useCallback jelosho migirim */
      const searchTaskHandler = useCallback((items) => {
-          // dispatch({ type: "SEARCH", payload: items });
           setTasks(items);
      }, []);
 
      // vase inke data ghablio fetch kone va data jadid ham ke ezafe shod neshon bede
      useEffect(() => {
-          fetch(`${api.firebase}/tasks.json`) // etelaato az firebase migirim
-               .then((res) => res.json()) // etelaato be json tabdil mikonim
+          fetch(`${api.firebase}/tasks.json`)
+               .then((res) => res.json())
                .then((resData) => {
-                    const tasksList = []; // toye task list etelaato valed mikonim  id/task
+                    const tasksList = [];
                     for (let item in resData) {
                          tasksList.push({
                               id: item,
@@ -82,7 +60,7 @@ const ToDo = () => {
           const filterTasks = copyTasks.filter((item) => item.id !== taskId);
           axios.delete(`${api.firebase}/tasks/${taskId}.json`);
           setTasks(filterTasks);
-          
+
           const tasksIndex = copyTasks.findIndex((item) => item.id === taskId);
           const task = copyTasks[tasksIndex];
           toastWarning(`${task.task} deleted!`);
