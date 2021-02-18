@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const ToDoList = ({ tasks }) => {
+const ToDoList = ({ tasks, taskDelete }) => {
      return (
           <Fragment>
                <ul className='todo'>
@@ -9,7 +9,12 @@ const ToDoList = ({ tasks }) => {
                               <div className='content'>
                                    <li className='left'>{item.task}</li>
                               </div>
-                              <button className='right'> x </button>
+                              <button
+                                   className='right'
+                                   onClick={() => {taskDelete(item.id)}}
+                              >
+                                   x
+                              </button>
                               {/* <button className='right'> edit </button> */}
                          </div>
                     ))}

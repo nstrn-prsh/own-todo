@@ -3,6 +3,8 @@ import { ThemeContext } from "./../../Container/ContextApi/ThemeContext";
 import { Badge } from "react-bootstrap";
 import Input from "./../Common/Input";
 import api from "./../../Services/api.json";
+import ToDoList from './ToDoList';
+import fire from './../../Services/fire';
 
 const Search = React.memo(({ loadTasks, tasks }) => {
      const { mode } = useContext(ThemeContext);
@@ -39,7 +41,7 @@ const Search = React.memo(({ loadTasks, tasks }) => {
                          });
                }
           }, 500);
-          /*note: //optimize: 
+          /*note:
           tabe cleanup vaghti ejra mishe ke useEffect yebar ejra shode
           va alan mikhad bar asase dependecy ha ejra beshe*/
           return () => clearTimeout(timer);

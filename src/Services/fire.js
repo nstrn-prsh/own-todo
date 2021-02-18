@@ -15,4 +15,8 @@ const fire = firebase.initializeApp(firebaseConfig);
 
 export default fire;
 
-// user : nastaran.p.sh.77@gmail.com 123456
+// fire.database()
+// .ref(taskId)
+// .remove()
+// .then(console.log("done"))
+// .catch(console.log("failed"));
