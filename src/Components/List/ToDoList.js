@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const ToDoList = ({ tasks, taskDelete }) => {
+const ToDoList = ({ tasks, taskDelete, doneTask }) => {
      return (
           <Fragment>
                {tasks.length > 0 ? (
@@ -8,7 +8,16 @@ const ToDoList = ({ tasks, taskDelete }) => {
                          {tasks.map((item) => (
                               <div className='task' key={item.id}>
                                    <div className='content'>
-                                        <li className='left'>{item.task}</li>
+                                        <li
+                                             className='left'
+                                             onClick={() => doneTask(item.id)}
+                                        >
+                                             {item.complete ? (
+                                                  <del>{item.task}</del>
+                                             ) : (
+                                                  item.task
+                                             )}
+                                        </li>
                                    </div>
                                    <button
                                         className='right'

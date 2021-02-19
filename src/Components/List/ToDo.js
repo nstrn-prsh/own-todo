@@ -22,6 +22,7 @@ const ToDo = () => {
                          {
                               id: resData.name,
                               ...items,
+                              complete: false,
                          },
                     ]);
                })
@@ -49,30 +50,48 @@ const ToDo = () => {
                          tasksList.push({
                               id: item,
                               task: resData[item].task,
+                              complete: false,
                          });
                     }
                     setTasks(tasksList);
                });
      }, []);
 
-     
+     const copyTasks = [...tasks];
+
+     const taskIndex = (taskId) => {
+          const tasksIndex = copyTasks.findIndex((item) => item.id === taskId);
+          const task = copyTasks[tasksIndex];
+          return task;
+     };
+
      const deleteTaskHandler = (taskId) => {
-          const copyTasks = [...tasks];
           const filterTasks = copyTasks.filter((item) => item.id !== taskId);
           axios.delete(`${api.firebase}/tasks/${taskId}.json`);
           setTasks(filterTasks);
-          
-          const tasksIndex = copyTasks.findIndex((item) => item.id === taskId);
-          const task = copyTasks[tasksIndex];
+          const task = taskIndex(taskId);
           toastWarning(`${task.task} deleted!`);
      };
-        console.log(tasks);
+
+     const doneTaskHandler = (taskId) => {
+          const task = taskIndex(taskId);
+          task.complete = !task.complete;
+          setTasks(copyTasks);
+     };
+
+     console.log(tasks);
+     console.log(tasks.complete);
 
      return (
           <Fragment>
                <section>
                     <Search loadTasks={searchTaskHandler} tasks={tasks} />
-                    <ToDoList tasks={tasks}setTasks={setTasks} taskDelete={deleteTaskHandler}/>
+                    <ToDoList
+                         tasks={tasks}
+                         setTasks={setTasks}
+                         taskDelete={deleteTaskHandler}
+                         doneTask={doneTaskHandler}
+                    />
                </section>
 
                <ToDoForm addTask={addTaskHandler} />
