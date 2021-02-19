@@ -55,22 +55,24 @@ const ToDo = () => {
                });
      }, []);
 
+     
      const deleteTaskHandler = (taskId) => {
           const copyTasks = [...tasks];
           const filterTasks = copyTasks.filter((item) => item.id !== taskId);
           axios.delete(`${api.firebase}/tasks/${taskId}.json`);
           setTasks(filterTasks);
-
+          
           const tasksIndex = copyTasks.findIndex((item) => item.id === taskId);
           const task = copyTasks[tasksIndex];
           toastWarning(`${task.task} deleted!`);
      };
+        console.log(tasks);
 
      return (
           <Fragment>
                <section>
                     <Search loadTasks={searchTaskHandler} tasks={tasks} />
-                    <ToDoList tasks={tasks} taskDelete={deleteTaskHandler} />
+                    <ToDoList tasks={tasks}setTasks={setTasks} taskDelete={deleteTaskHandler}/>
                </section>
 
                <ToDoForm addTask={addTaskHandler} />
