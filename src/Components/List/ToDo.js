@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useCallback, useEffect } from "react";
+import React, { Fragment, useReducer, useCallback } from "react";
 import api from "./../../Services/api.json";
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
@@ -6,21 +6,41 @@ import Search from "./Search";
 import axios from "axios";
 import { toastWarning } from "./../UI/toastMsg";
 
+const taskReducer = (state, action) => {
+     switch (action.type) {
+          case "ADD":
+               return [...state, action.payload];
+          case "SEARCH":
+               return action.payload;
+          case "DELETE":
+               return action.payload;
+          case "DONE":
+               return action.payload;
+          default:
+               return state;
+     }
+};
+
 const ToDo = () => {
-     const [tasks, setTasks] = useState([]);
+     const [tasks, dispatch] = useReducer(taskReducer, []);
 
      const addTaskHandler = (items) => {
-          axios(`${api.firebase}/tasks.json`)
-          .then((resData) => {
-               setTasks((prevState) => [
-                    ...prevState,
-                    {
-                         id: resData.name,
-                         ...items,
-                         complete: false,
-                    },
-               ]);
-          });
+          fetch(`${api.firebase}/tasks.json`, {
+               method: "POST",
+               body: JSON.stringify(items),
+               headers: { "Content-Type": "application/json" },
+          }).then((response) =>
+               response.json().then((resData) => {
+                    dispatch({
+                         type: "ADD",
+                         payload: {
+                              id: resData.name,
+                              ...items,
+                              // complete: false,
+                         },
+                    });
+               })
+          );
      };
 
      /* items: maghadiri ke search shodan
@@ -31,23 +51,7 @@ const ToDo = () => {
      dar natije ye loopi az request ha ijad mishe 
      ke ma ba useCallback jelosho migirim */
      const searchTaskHandler = useCallback((items) => {
-          setTasks(items);
-     }, []);
-
-     // vase inke data ghablio fetch kone va data jadid ham ke ezafe shod neshon bede
-     useEffect(() => {
-          axios(`${api.firebase}/tasks.json`)
-               .then((resData) => {
-                    const tasksList = [];
-                    for (let item in resData) {
-                         tasksList.push({
-                              id: item,
-                              task: resData[item].task,
-                              complete: false,
-                         });
-                    }
-                    setTasks(tasksList);
-               });
+          dispatch({ type: "SEARCH", payload: items });
      }, []);
 
      const copyTasks = [...tasks];
@@ -61,7 +65,7 @@ const ToDo = () => {
      const deleteTaskHandler = (taskId) => {
           const filterTasks = copyTasks.filter((item) => item.id !== taskId);
           axios.delete(`${api.firebase}/tasks/${taskId}.json`);
-          setTasks(filterTasks);
+          dispatch({ type: "DELETE", payload: filterTasks });
           const task = taskIndex(taskId);
           toastWarning(`${task.task} deleted!`);
      };
@@ -69,7 +73,7 @@ const ToDo = () => {
      const doneTaskHandler = (taskId) => {
           const task = taskIndex(taskId);
           task.complete = !task.complete;
-          setTasks(copyTasks);
+          dispatch({ type: "DONE", payload: copyTasks });
      };
 
      console.log(tasks);
@@ -81,7 +85,6 @@ const ToDo = () => {
                     <Search loadTasks={searchTaskHandler} tasks={tasks} />
                     <ToDoList
                          tasks={tasks}
-                         setTasks={setTasks}
                          taskDelete={deleteTaskHandler}
                          doneTask={doneTaskHandler}
                     />

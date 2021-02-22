@@ -32,6 +32,7 @@ const Search = React.memo(({ loadTasks, tasks }) => {
                                    tasksList.push({
                                         id: item,
                                         task: resData[item].task,
+                                        complete: false,
                                    });
                               }
 
