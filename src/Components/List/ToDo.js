@@ -10,23 +10,17 @@ const ToDo = () => {
      const [tasks, setTasks] = useState([]);
 
      const addTaskHandler = (items) => {
-          //note:  url + tasks.json
-          fetch(`${api.firebase}/tasks.json`, {
-               method: "POST",
-               body: JSON.stringify(items),
-               headers: { "content-type": "application/json" },
-          }).then((res) =>
-               res.json().then((resData) => {
-                    setTasks((prevState) => [
-                         ...prevState,
-                         {
-                              id: resData.name,
-                              ...items,
-                              complete: false,
-                         },
-                    ]);
-               })
-          );
+          axios(`${api.firebase}/tasks.json`)
+          .then((resData) => {
+               setTasks((prevState) => [
+                    ...prevState,
+                    {
+                         id: resData.name,
+                         ...items,
+                         complete: false,
+                    },
+               ]);
+          });
      };
 
      /* items: maghadiri ke search shodan
@@ -42,8 +36,7 @@ const ToDo = () => {
 
      // vase inke data ghablio fetch kone va data jadid ham ke ezafe shod neshon bede
      useEffect(() => {
-          fetch(`${api.firebase}/tasks.json`)
-               .then((res) => res.json())
+          axios(`${api.firebase}/tasks.json`)
                .then((resData) => {
                     const tasksList = [];
                     for (let item in resData) {
