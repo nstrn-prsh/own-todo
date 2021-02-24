@@ -27,7 +27,7 @@ const ToDoList = ({ tasks, taskDelete, doneTask }) => {
                                    >
                                         x
                                    </button>
-                                   {/* <button className='right'> edit </button> */}
+                                   <button className='right'> edit </button>
                               </div>
                          ))}
                     </ul>

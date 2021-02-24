@@ -3,6 +3,7 @@ import { ThemeContext } from "./../../Container/ContextApi/ThemeContext";
 import { Badge } from "react-bootstrap";
 import Input from "./../Common/Input";
 import api from "./../../Services/api.json";
+import axios from "axios";
 
 const Search = React.memo(({ loadTasks, tasks }) => {
      const { mode } = useContext(ThemeContext);
@@ -24,6 +25,7 @@ const Search = React.memo(({ loadTasks, tasks }) => {
                          searchTask.length === 0
                               ? ""
                               : `?orderBy="task"&equalTo="${searchTask}"`;
+                         // ask: chera vaghti axios.get mizaram kar nemikone?
                     fetch(`${api.firebase}/tasks.json` + query)
                          .then((res) => res.json())
                          .then((resData) => {

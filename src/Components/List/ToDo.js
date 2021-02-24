@@ -25,12 +25,7 @@ const ToDo = () => {
      const [tasks, dispatch] = useReducer(taskReducer, []);
 
      const addTaskHandler = (items) => {
-          fetch(`${api.firebase}/tasks.json`, {
-               method: "POST",
-               body: JSON.stringify(items),
-               headers: { "Content-Type": "application/json" },
-          }).then((response) =>
-               response.json().then((resData) => {
+          axios.post(`${api.firebase}/tasks.json`,items).then((resData) => {
                     dispatch({
                          type: "ADD",
                          payload: {
@@ -40,7 +35,6 @@ const ToDo = () => {
                          },
                     });
                })
-          );
      };
 
      /* items: maghadiri ke search shodan
@@ -77,7 +71,6 @@ const ToDo = () => {
      };
 
      console.log(tasks);
-     console.log(tasks.complete);
 
      return (
           <Fragment>
