@@ -22,6 +22,6 @@ $ npm start
 ![](https://ibb.co/CvG8JG7)
 ![](https://ibb.co/v1gsnMN)
 ![](https://ibb.co/c1ym3Kk)
-![](https://ibb.co/fXS0MN7)
+![](https://i.ibb.co/TwThc05/cold-weather.jpg)
 
 </div>
