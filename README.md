@@ -16,12 +16,12 @@ $ npm start
 
 ##  photos of project
 
-![](https://ibb.co/3NHZSdN)
-![](https://ibb.co/stkF9C8)
-![](https://ibb.co/481yTNg)
-![](https://ibb.co/CvG8JG7)
-![](https://ibb.co/v1gsnMN)
-![](https://ibb.co/c1ym3Kk)
+![](https://ibb.co/3NHZSdN/sign-in-sgin-up-page.jpg)
+![](https://ibb.co/stkF9C8/enter-todo-page.jpg)
+![](https://ibb.co/481yTNg/todo-list.jpg)
+![](https://ibb.co/CvG8JG7/tasks.jpg)
+![](https://ibb.co/v1gsnMN/weather-page.jpg)
+![](https://ibb.co/c1ym3Kk/hot-weather.jpg)
 ![](https://i.ibb.co/TwThc05/cold-weather.jpg)
 
 </div>
