@@ -16,7 +16,7 @@ $ npm start
 
 ##  photos of project
 
-![](https://ibb.co/3NHZSdN/sign-in-sgin-up-page.jpg)
+![](https://i.ibb.co/YkGsfQk/sign-in-sgin-up-page.jpg)
 ![](https://i.ibb.co/fQBCd9j/enter-todo-page.jpg)
 ![](https://i.ibb.co/y64TysB/todo-list.jpg)
 ![](https://i.ibb.co/82ZszZ5/tasks.jpg)
